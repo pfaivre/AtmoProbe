@@ -25,6 +25,7 @@
 #include <Arduino.h>
 
 #include "DHTSensor.h"
+#include "config.h"
 
 DHT_Unified dht(PROBE_DHT_PIN, DHTTYPE);
 

@@ -24,33 +24,37 @@
 
 #pragma once
 
-#include <Adafruit_Sensor.h>
-#include <DHT.h>
-#include <DHT_U.h>
-
-#define DHTTYPE DHT22
-
-
 /**
- * Reads metrics from a DHT22 sensor
- * Detects level of humidity and temperature
+ * Handles external communication
  */
-class DHTSensor {
+class Io {
 public:
     /**
-     * Initialize the DHT sensor
+     * Initialization
      */
     static void Begin();
 
     /**
-     * Read level of humidity
-     * @return Atmospheric humidity as percentage
+     * Performs recurrent operations
+     * To be called regularly
      */
-    static float ReadHumidity();
+    static void Loop();
 
     /**
-     * Read level of atmospheric temperature
-     * @return Temperature value as Celsius degrees
+     * Send a MQTT message with the reading
      */
-    static float ReadTemperature();
+    static void PublishReading(char *fieldKey, float value);
+
+    /**
+     * Callback for the PubSubClient library
+     * Handles incoming messages from the broker
+     */
+    static void Callback(char* topic, byte* payload, unsigned int length);
+
+private:
+    /**
+     * Connect to the broker through Ethernet.
+     * Does nothing if the connection is already active
+     */
+    static void _connect();
 };

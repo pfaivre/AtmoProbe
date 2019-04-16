@@ -13,7 +13,7 @@ Connected air quality sensor
 On config.h, change the values of `IO_MAC_ADDRESS` and `IO_BROKER_ADDRESS` according to your configuration.
 
 Once started and connected, the device periodically sends its readings on the `probes` topic.
-Message format follows the (Influx Line protocol)[https://docs.influxdata.com/influxdb/v1.7/write_protocols/line_protocol_tutorial/].
+Message format follows the [Influx Line protocol](https://docs.influxdata.com/influxdb/v1.7/write_protocols/line_protocol_tutorial/).
 
 Examples:
 ```

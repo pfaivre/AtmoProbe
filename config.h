@@ -73,7 +73,6 @@
 // IO: Input/Output
 // ----------------
 
-#define IO_NETWORKING 1 // 1 activates ethernet connection. 0 disables it to save memory space.
 #define IO_MAC_ADDRESS { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06 } // Mac address of the device (should be written on your ethernet board)
 #define IO_ETH_TIMEOUT 5000 // in milliseconds
 #define IO_BROKER_ADDRESS "192.168.0.1" // Address of the MQTT broker (e.g. "192.168.0.1").
