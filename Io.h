@@ -43,7 +43,7 @@ public:
     /**
      * Send a MQTT message with the reading
      */
-    static void PublishReading(char *fieldKey, float value);
+    static void PublishReading(const char *fieldKey, float value);
 
     /**
      * Callback for the PubSubClient library

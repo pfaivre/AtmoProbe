@@ -56,9 +56,9 @@ void loop() {
     if (millis() - prevMillisProbe >= PROBE_DELAY) {
         prevMillisProbe = millis();
 
+        float value = NAN;
+        
         #if PROBE_DHT_ENABLED == 1
-            float value = NAN;
-            
             // Temperature
             value = DHTSensor::ReadTemperature();
             if (value != NAN)

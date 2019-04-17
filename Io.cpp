@@ -116,7 +116,7 @@ void Io::_connect() {
     }
 }
 
-void Io::PublishReading(char *fieldKey, float value) {
+void Io::PublishReading(const char *fieldKey, float value) {
     if (mqtt.connected()) {
 
         char buffer[MESSAGE_BUFFER_SIZE] = { '\0' };
